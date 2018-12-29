@@ -102,14 +102,14 @@
                             android:clickable="true"
                             android:src="@drawable/poweredby" />
 
-                        <TextView
+                        <!--<TextView
                             android:id="@+id/tvVAMS"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/vams"
                             android:textColor="@color/vams_login_text"
                             android:textSize="13sp"
-                            android:visibility="gone" />
+                            android:visibility="gone" />-->
                     </LinearLayout>
 
                     <LinearLayout
