@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+
+            android:focusable="false">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapse_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/blue"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/white">
+                <!-- app:contentScrim="?attr/colorPrimary"-->
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true"
+                    ads:layout_collapseParallaxMultiplier=".8"
+                    app:layout_collapseMode="parallax">
+
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true">
+
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center" />
+
+                        <ImageView
+                            android:id="@+id/imgvMap"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="15dp"
+                            android:padding="15dp"
+                            app:srcCompat="@drawable/ic_map" />
+
+
+                    </RelativeLayout>
+
+
+                </FrameLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="5dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    android:title=""
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                </android.support.v7.widget.Toolbar>
+
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+
+        <com.stfalcon.chatkit.messages.MessagesList
+            android:id="@+id/messagesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/input"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="bottom"
+
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/input"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/gray_dark" />
+
+        <com.stfalcon.chatkit.messages.MessageInput
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            app:inputHint="Type a message.."
+
+            app:showAttachmentButton="true" />
+
+        <!-- <com.libizo.CustomEditText
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="5dp"
+             android:layout_weight="10"
+             android:hint="Type a message"
+             android:inputType="text"
+             app:libIZO_setBorderColor="@color/black"
+             app:libIZO_setBorderView="true"
+             app:libIZO_setCornerRadius="30dp"
+             android:padding="10dp"
+             app:libIZO_setPrefixTextColor="#FF4081"
+             app:libIZO_setStrokeWidth="2dp" />
+
+         <ImageView
+             android:layout_width="0dp"
+             android:layout_weight="2"
+             android:layout_marginRight="5dp"
+             android:src="@drawable/ic_send"
+             android:layout_height="match_parent" />-->
+
+    </LinearLayout>
+
+</RelativeLayout>

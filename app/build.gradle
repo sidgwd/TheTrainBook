@@ -21,14 +21,21 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.0'
-    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.sackcentury:shinebutton:0.2.0'
+    implementation'com.google.android.gms:play-services-maps:16.0.0'
+    implementation 'com.libizo:customedittext:1.0.4'
+//    implementation 'com.github.stfalcon:chatkit:0.3.3'
+    implementation project(':chatkit')
+    implementation "com.squareup.picasso:picasso:2.5.2"
+
+
     implementation 'com.mxn.soul:flowingdrawer-core:1.2.5'
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
     implementation 'com.android.support:support-v4:27.1.1'
-    implementation "com.squareup.picasso:picasso:2.5.2"
+//    implementation "com.squareup.picasso:picasso:2.5.2"
 }

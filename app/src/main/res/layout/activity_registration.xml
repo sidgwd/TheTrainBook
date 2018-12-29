@@ -8,7 +8,6 @@
     android:background="@color/white">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -96,8 +95,6 @@
                     </RelativeLayout>
 
 
-
-
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -152,8 +149,8 @@
                         <ImageView
                             android:layout_width="@dimen/star_size"
                             android:layout_height="@dimen/star_size"
-                            android:visibility="gone"
                             android:layout_centerVertical="true"
+                            android:visibility="gone"
                             ads:srcCompat="@drawable/ic_star"></ImageView>
 
                         <LinearLayout
@@ -222,7 +219,8 @@
                                 android:layout_marginRight="10dp"
                                 android:background="@null"
                                 android:digits="0123456789"
-                                android:maxLength="@integer/email_max_length"
+                                android:inputType="phone"
+                                android:maxLength="@integer/mobile_max_length"
                                 android:singleLine="true"
                                 android:text=""
 
@@ -268,9 +266,148 @@
                                 android:layout_gravity="end"
                                 android:layout_marginRight="10dp"
                                 android:background="@null"
+                                android:inputType="textEmailAddress"
                                 android:maxLength="@integer/email_max_length"
                                 android:singleLine="true"
-                                android:inputType="textEmailAddress"
+                                android:text=""
+                                android:textAlignment="viewEnd" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_border_height"
+                        android:background="@color/border_color"
+                        android:paddingTop="10dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/star_size"
+                            android:layout_height="@dimen/star_size"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            ads:srcCompat="@drawable/ic_star"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/create_appointment_padding"
+                                android:text="@string/company_name"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/default_font_size" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginRight="10dp"
+                                android:background="@null"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textAlignment="viewEnd" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_border_height"
+                        android:background="@color/border_color"
+                        android:paddingTop="10dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/star_size"
+                            android:layout_height="@dimen/star_size"
+                            android:layout_centerVertical="true"
+                            ads:srcCompat="@drawable/ic_star"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/create_appointment_padding"
+                                android:text="@string/password"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/default_font_size" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginRight="10dp"
+                                android:background="@null"
+                                android:inputType="textPassword"
+                                android:maxLength="@integer/mobile_max_length"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textAlignment="viewEnd" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_border_height"
+                        android:background="@color/border_color"
+                        android:paddingTop="10dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/star_size"
+                            android:layout_height="@dimen/star_size"
+                            android:layout_centerVertical="true"
+                            ads:srcCompat="@drawable/ic_star"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/create_appointment_padding"
+                                android:text="@string/confirm_password"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/default_font_size" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginRight="10dp"
+                                android:background="@null"
+                                android:inputType="textPassword"
+                                android:maxLength="@integer/mobile_max_length"
+                                android:singleLine="true"
                                 android:text=""
                                 android:textAlignment="viewEnd" />
                         </LinearLayout>
@@ -305,7 +442,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="@dimen/create_appointment_padding"
-                                android:text="@string/address"
+                                android:text="@string/dob"
                                 android:textColor="@color/hint_color"
                                 android:textSize="@dimen/default_font_size" />
 
@@ -350,7 +487,114 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="@dimen/create_appointment_padding"
-                                android:text="@string/address"
+                                android:text="@string/gender"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/default_font_size" />
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/hint_color"
+                                    android:padding="@dimen/create_appointment_padding"
+
+                                    android:textSize="@dimen/default_font_size"
+                                    android:text="Male" />
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:textColor="@color/hint_color"
+                                    android:padding="@dimen/create_appointment_padding"
+
+                                    android:textSize="@dimen/default_font_size"
+                                    android:layout_height="wrap_content"
+                                    android:text="Female" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_border_height"
+                        android:background="@color/border_color"
+                        android:paddingTop="10dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/star_size"
+                            android:layout_height="@dimen/star_size"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            ads:srcCompat="@drawable/ic_star"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/create_appointment_padding"
+                                android:text="@string/address1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/default_font_size" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginRight="10dp"
+                                android:background="@null"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textAlignment="viewEnd" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_border_height"
+                        android:background="@color/border_color"
+                        android:paddingTop="10dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/star_size"
+                            android:layout_height="@dimen/star_size"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            ads:srcCompat="@drawable/ic_star"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/create_appointment_padding"
+                                android:text="@string/address2"
                                 android:textColor="@color/hint_color"
                                 android:textSize="@dimen/default_font_size" />
 
@@ -390,10 +634,10 @@
             android:layout_alignParentRight="true"
             android:layout_margin="20dp"
             android:backgroundTint="@color/colorPrimary"
-            android:onClick="onApprovedClicked"
-            ads:srcCompat="@drawable/ic_done"
+            android:onClick="onRegistrationClick"
             android:tint="@color/white"
-            ads:fabSize="normal" />
+            ads:fabSize="normal"
+            ads:srcCompat="@drawable/ic_done" />
 
 
     </RelativeLayout>

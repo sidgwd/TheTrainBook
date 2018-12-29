@@ -9,6 +9,20 @@
     <string name="mobile_no">Mobile No</string>
     <string name="address">Address</string>
     <string name="MainActivity">Main Activity</string>
+    <string name="address1">Address Line1</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="address2">Address Line2</string>
+
+    <string name="dob">Date Of Birth</string>
+
+    <string name="gender">Gender</string>
+    <string name="company_name">Company Name</string>
+
+    <string name="cameranotfound">There is no camera app present in this device.</string>
+    <string name="gallerynotfound">There is no Gallery app present in this device.</string>
+
+
     <integer name="email_max_length">50</integer>
     <integer name="mobile_max_length">15</integer>
     <integer name="isd_max_length">5</integer>
@@ -19,6 +33,11 @@
         <item>BG</item>
         <item>DE</item>
         <item>FI</item>
+    </string-array>
+
+    <string-array name="view_types_dialog">
+        <item name="image">Image (default)</item>
+        <item name="voice">Voice message (custom)</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
