@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <layer-list>
+            <item>
+                <bitmap android:gravity="center_horizontal|right" android:src="@drawable/ic_down_arrow"></bitmap>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <!--<item>
+                <shape xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:shape="rectangle" android:padding="8dp">
+
+                   &lt;!&ndash; <padding android:bottom="3dp"
+                        android:left="20dp"
+                        android:right="3dp"
+                        android:top="3dp" />&ndash;&gt;
+
+                </shape>
+            </item>-->
+            <item>
+                <bitmap android:gravity="center_vertical|right"
+                    android:src="@drawable/ic_down_arrow" />
+                // you can use any other image here, instead of default_holo_dark_am
+            </item>
+        </layer-list>
+    </item>
+</selector>

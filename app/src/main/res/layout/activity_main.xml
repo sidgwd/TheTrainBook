@@ -11,4 +11,10 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:text="Register"
+        android:id="@+id/btnRegister"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
