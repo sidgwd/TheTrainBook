@@ -35,9 +35,9 @@
     <color name="app_font_color">#2196f3</color>
 
     <color name="app_button_color">#2196f3</color>
-<!--
-    <color name="hint_color">#BDBDBD</color>
--->
+    <!--
+        <color name="hint_color">#BDBDBD</color>
+    -->
     <color name="hint_color">@color/text_color_light</color>
     <color name="hint_color_light">#E0E0E0</color>
 
@@ -49,7 +49,7 @@
     <color name="text_color_dark">#000000</color><!--Light-->
     <color name="error_color">#f15a29</color><!--Light-->
     <color name="text_color_light">#737373</color><!--Regular-->
-   <!-- <color name="colorPrimary">#30318c</color>--><!--Regular-->
+    <!-- <color name="colorPrimary">#30318c</color>--><!--Regular-->
     <color name="button_text_color">#ffffff</color><!--Regular-->
     <color name="heading_color">#a8a8aa</color><!--Light-->
 
