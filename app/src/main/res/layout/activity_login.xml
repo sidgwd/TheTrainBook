@@ -43,7 +43,7 @@
                     android:src="@drawable/poweredby" />
             </LinearLayout>
 
-            <!--<RelativeLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
@@ -54,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"></Spinner>
-            </RelativeLayout>-->
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -115,7 +115,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="80dp"
+
                         android:animateLayoutChanges="true"
                         android:gravity="bottom"
 
@@ -221,6 +221,37 @@
                             android:layout_height="@dimen/view_border_height_login"
                             android:background="@color/border_color"
                             android:paddingTop="10dp"></View>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="16dp"
+                            android:src="@drawable/gmailround"/>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/facebookround"/>
+
+                        <TextView
+                            android:id="@+id/tvSignUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sign_up"
+                            android:gravity="center"
+                            android:layout_margin="20dp"/>
 
 
                     </LinearLayout>

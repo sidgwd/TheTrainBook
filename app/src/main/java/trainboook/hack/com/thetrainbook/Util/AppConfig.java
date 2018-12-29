@@ -12,5 +12,6 @@ import java.util.Locale;
 public class AppConfig {
     public static final String APP_FONT_LIGHT = "Montserrat-Light.otf";
     public static final String APP_FONT_REGULAR = "Montserrat-Regular.otf";
+    public static final int ALL_PERMISSION_CHECK = 4;
 
 }
