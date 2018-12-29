@@ -1,7 +1,9 @@
 package trainboook.hack.com.thetrainbook.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +24,7 @@ public class CommunityFragment extends Fragment {
     RecyclerView rvCommunity;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<Community> communities;
+    FloatingActionButton fabAdd;
 
 
     @Override
@@ -43,6 +46,19 @@ public class CommunityFragment extends Fragment {
         fillCommunities(communities);
         CommunityAdapter communityAdapter= new CommunityAdapter(context,communities);
         rvCommunity.setAdapter(communityAdapter);
+
+        fabAdd = (FloatingActionButton)view.findViewById(R.id.fab);
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogue();
+            }
+        });
+
+    }
+
+    private void showDialogue() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
     }
 
