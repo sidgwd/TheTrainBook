@@ -31,11 +31,6 @@
     <dimen name="home_text_size">16sp</dimen>
     <dimen name="list_text_size">15sp</dimen>
     <dimen name="login_view_side_padding">25dp</dimen>
-
-
-
-
-
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
