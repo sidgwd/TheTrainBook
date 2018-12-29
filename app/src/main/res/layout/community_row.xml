@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/schedule_year_color"
+        android:gravity="center"
+        android:paddingLeft="@dimen/create_appointment_padding"
+        android:paddingRight="@dimen/create_appointment_padding"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_round_edit" />
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_round_cancel" />
+
+        <ImageView
+            android:id="@+id/ivApprove"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_round_approve" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <View
+                android:id="@+id/viewSideColor"
+                android:layout_width="8px"
+                android:layout_height="match_parent"
+                android:background="@color/red"></View>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/community_profile_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="@dimen/create_appointment_padding"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:src="@drawable/ic_camera"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1px" />
+
+                <!--<TextView
+                    android:id="@+id/tvNoOfVisistor"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:elevation="2dp"
+                    android:layout_alignBottom="@+id/profile_image"
+                    android:layout_alignEnd="@+id/profile_image"
+                    android:layout_alignRight="@+id/profile_image"
+                    android:background="@drawable/tv_rouned_corners"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="+2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="10sp" />-->
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/create_appointment_padding"
+                android:paddingTop="@dimen/create_appointment_left_padding">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/group_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_font_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/one"/>
+
+                    <TextView
+                        android:id="@+id/tvLastMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:paddingLeft="10dp"
+                        android:text="@string/last_msg"
+                        android:layout_gravity="center"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+
+                </LinearLayout>
+
+
+
+
+
+                <!--  <TextView
+                      android:id="@+id/tvNoOfVisitor"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:paddingTop="5dp"
+                      android:singleLine="true"
+                      android:text="@string/visitor_company"
+                      android:textColor="@color/hint_color"
+                      android:textSize="@dimen/default_font_size" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rlDeleteClick"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:orientation="vertical"
+                android:gravity="center|left"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="@dimen/create_appointment_left_padding">
+
+
+                <TextView
+                    android:id="@+id/tvLastMsgTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="06:21"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/default_font_size" />
+
+                <!--<TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:gravity="right"
+                    android:text="@string/to_date"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/default_font_size" />
+-->
+                <TextView
+                    android:id="@+id/tvMsgCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/create_appointment_left_padding"
+                    android:layout_margin="10dp"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/msg_count_background"
+                    android:text="+2"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_border_height"
+            android:layout_below="@+id/llmain"
+            android:background="@color/border_color"></View>
+
+    </LinearLayout>
+
+
+    <!-- <View
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/view_border_height"
+         android:layout_below="@+id/llmain"
+         android:background="@color/border_color"></View>-->
+</com.daimajia.swipe.SwipeLayout>

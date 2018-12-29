@@ -31,4 +31,8 @@
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
     <string name="sign_up">Sign Up</string>
+    <string name="no_data_found">No data found</string>
+    <string name="group_name">Group Name</string>
+    <string name="last_msg">Last message</string>
+    <string name="search">Search</string>
 </resources>

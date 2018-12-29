@@ -122,7 +122,7 @@ public class NavigationDrawerMenuFragment extends com.mxn.soul.flowingdrawer_cor
         try {
             //we are getting action bar bug as it is disable we need to re assign if
             MainActivity.toolbar = (Toolbar) activity.findViewById(R.id.toolbar);
-            MainActivity.toolbar.setNavigationIcon(R.drawable.ic_hamburger_menu);
+            MainActivity.toolbar.setNavigationIcon(R.drawable.menu);
 
             vNavigation.getMenu().getItem(0).setChecked(true);
 //            NavigationDrawerMenuFragment.vNavigation.setCheckedItem(R.id);
