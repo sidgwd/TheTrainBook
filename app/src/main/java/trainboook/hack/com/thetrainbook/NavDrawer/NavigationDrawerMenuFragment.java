@@ -26,6 +26,7 @@ import trainboook.hack.com.thetrainbook.MainActivity;
 import trainboook.hack.com.thetrainbook.Model.Community;
 import trainboook.hack.com.thetrainbook.ProfileFragment;
 import trainboook.hack.com.thetrainbook.R;
+import trainboook.hack.com.thetrainbook.ReportFragment;
 
 
 //import com.commercial.vams.viraat.Fragment.CreateAppointmentFragment;
@@ -164,6 +165,10 @@ public class NavigationDrawerMenuFragment extends com.mxn.soul.flowingdrawer_cor
                                 case R.id.menuProfile:
                                     MainActivity.fragmentClass = ProfileFragment.class;
                                     title = context.getResources().getString(R.string.profile);
+                                    break;
+                                case R.id.menuReport:
+                                    MainActivity.fragmentClass = ReportFragment.class;
+                                    title = context.getResources().getString(R.string.report);
                                     break;
 
                                 case R.id.menuLogout:

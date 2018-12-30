@@ -26,6 +26,15 @@
             android:title="@string/profile"
             app:actionViewClass="android.widget.TextView" />
     </group>
+    <group
+        android:id="@+id/menu_group_5"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menuReport"
+            android:icon="@drawable/ic_appointment_schedule"
+            android:title="@string/report"
+            app:actionViewClass="android.widget.TextView" />
+    </group>
 
     <group
         android:id="@+id/menu_group_4"
@@ -36,8 +45,6 @@
             android:title="@string/logout"
             app:actionViewClass="android.widget.TextView" />
     </group>
-
-
 
 
 </menu>
