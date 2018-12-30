@@ -45,6 +45,7 @@ public class RegistrationActivity extends AppCompatActivity implements Imageutil
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         profile_image = findViewById(R.id.profile_image);
         imageutils = new Imageutils(this);
+        fabSend= findViewById(R.id.fabSend);
         fabSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
