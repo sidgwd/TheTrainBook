@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import java.util.List;
 
 import trainboook.hack.com.thetrainbook.MainActivity;
+import trainboook.hack.com.thetrainbook.Model.Community;
 import trainboook.hack.com.thetrainbook.R;
 
 
@@ -146,7 +147,8 @@ public class NavigationDrawerMenuFragment extends com.mxn.soul.flowingdrawer_cor
 
                                 case R.id.menuCommunity:
                                     try {
-
+                                        MainActivity.fragmentClass = Community.class;
+                                        title = context.getResources().getString(R.string.community);
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }

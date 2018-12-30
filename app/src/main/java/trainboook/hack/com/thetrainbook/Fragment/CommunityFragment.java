@@ -2,19 +2,23 @@ package trainboook.hack.com.thetrainbook.Fragment;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
 import trainboook.hack.com.thetrainbook.Adapter.CommunityAdapter;
+import trainboook.hack.com.thetrainbook.Activity.CreateGroupActivity;
 import trainboook.hack.com.thetrainbook.Model.Community;
 import trainboook.hack.com.thetrainbook.R;
 
@@ -25,6 +29,8 @@ public class CommunityFragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<Community> communities;
     FloatingActionButton fabAdd;
+    AlertDialog alertDialog;
+
 
 
     @Override
@@ -59,7 +65,40 @@ public class CommunityFragment extends Fragment {
 
     private void showDialogue() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Please enter the group name you want to create");
+        builder.setView(getDialogueView());
+        alertDialog = builder.create();
+        alertDialog.show();
 
+    }
+
+    private View getDialogueView() {
+        final EditText etGroupName;
+        Button dialogueFab;
+        TextInputLayout input_layout_password;
+        View view = LayoutInflater.from(context).inflate(R.layout.dialogue,null,false);
+
+        etGroupName = (EditText)view.findViewById(R.id.etGroupName);
+        dialogueFab = (Button) view.findViewById(R.id.dialoguefab);
+        dialogueFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (etGroupName.getText().toString().isEmpty()){
+                    etGroupName.setError("Group name is mandatory");
+                }else {
+                    CreateGroupActivity.community = new Community();
+                    CreateGroupActivity.community.setGroupName(etGroupName.getText().toString().trim());
+                    startActivity(new Intent(getContext(),CreateGroupActivity.class));
+                    if (alertDialog.isShowing()){
+                        alertDialog.dismiss();
+                    }
+                }
+            }
+        });
+
+
+        return view;
     }
 
     private void fillCommunities(ArrayList<Community> communities) {
@@ -116,8 +155,6 @@ public class CommunityFragment extends Fragment {
         community6.setImgSrc(R.drawable.two);
 
         communities.add(community6);
-
-
 
     }
 
