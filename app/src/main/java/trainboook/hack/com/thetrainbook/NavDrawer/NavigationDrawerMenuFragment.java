@@ -20,8 +20,11 @@ import android.widget.RelativeLayout;
 
 import java.util.List;
 
+import trainboook.hack.com.thetrainbook.Fragment.CommunityFragment;
+import trainboook.hack.com.thetrainbook.Fragment.ComplainBox;
 import trainboook.hack.com.thetrainbook.MainActivity;
 import trainboook.hack.com.thetrainbook.Model.Community;
+import trainboook.hack.com.thetrainbook.ProfileFragment;
 import trainboook.hack.com.thetrainbook.R;
 
 
@@ -147,7 +150,7 @@ public class NavigationDrawerMenuFragment extends com.mxn.soul.flowingdrawer_cor
 
                                 case R.id.menuCommunity:
                                     try {
-                                        MainActivity.fragmentClass = Community.class;
+                                        MainActivity.fragmentClass = CommunityFragment.class;
                                         title = context.getResources().getString(R.string.community);
                                     } catch (Exception e) {
                                         e.printStackTrace();
@@ -155,10 +158,12 @@ public class NavigationDrawerMenuFragment extends com.mxn.soul.flowingdrawer_cor
                                     break;
 
                                 case R.id.menuComplainBox:
-
+                                    MainActivity.fragmentClass = ComplainBox.class;
+                                    title = context.getResources().getString(R.string.complain_box);
                                     break;
                                 case R.id.menuProfile:
-
+                                    MainActivity.fragmentClass = ProfileFragment.class;
+                                    title = context.getResources().getString(R.string.profile);
                                     break;
 
                                 case R.id.menuLogout:

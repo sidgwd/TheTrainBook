@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cordMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlVisitorImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:fitsSystemWindows="true"
+                    ads:layout_collapseParallaxMultiplier=".8"
+                    app:layout_collapseMode="parallax">
+
+                    <!-- <ImageView
+                         android:id="@+id/imgvBackgroud"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:scaleType="fitXY"
+                         android:visibility="gone" />-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:padding="10dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/profile_image"
+                            android:layout_width="160dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:elevation="10dp"
+                            android:padding="10dp"
+                            android:src="@drawable/sid"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="1px" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/create_appointment_padding"
+                    android:paddingTop="@dimen/profile_info_padding_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NAME"
+                        android:textColor="@color/text_color_dark"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="Nithin Poojary"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/create_appointment_padding"
+                    android:paddingTop="@dimen/profile_info_padding_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EMAIL"
+                        android:textColor="@color/text_color_dark"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="nithinpoojary888@gmail.com"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/create_appointment_padding"
+                    android:paddingTop="@dimen/profile_info_padding_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MOBILE NO"
+                        android:textColor="@color/text_color_dark"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:id="@+id/tvMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="+ 91 8007777248"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/create_appointment_padding"
+                    android:paddingTop="@dimen/profile_info_padding_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="COMPANY NAME"
+                        android:textColor="@color/text_color_dark"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:id="@+id/tvCompanyName"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="XYZ Infotech PVT LTD"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/create_appointment_padding"
+                    android:paddingTop="@dimen/profile_info_padding_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DESIGNATION"
+                        android:textColor="@color/text_color_dark"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:id="@+id/tvDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="Android Developer"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/default_font_size" />
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

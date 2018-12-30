@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -25,14 +27,16 @@ import android.widget.TextView;
 import com.mxn.soul.flowingdrawer_core.FlowingView;
 import com.mxn.soul.flowingdrawer_core.LeftDrawerLayout;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import trainboook.hack.com.thetrainbook.Fragment.CommunityFragment;
 import trainboook.hack.com.thetrainbook.NavDrawer.NavigationDrawerMenuFragment;
 import trainboook.hack.com.thetrainbook.Util.AppConfig;
+import trainboook.hack.com.thetrainbook.Util.Imageutils;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Imageutils.ImageAttachmentListener{
 
     final String TAG = MainActivity.class.getSimpleName().toString();
     RelativeLayout rl_main;
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void openHomeFragment() {
+    public void openHomeFragment() {
         MainActivity.fragmentClass = CommunityFragment.class;
         String title = context.getResources().getString(R.string.community);
         try {
@@ -277,4 +281,8 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton((nomsg), dialogClickListener).show();
     }
 
+    @Override
+    public void image_attachment(int from, File fileloaction, String filename, Bitmap file, Uri uri) {
+
+    }
 }
