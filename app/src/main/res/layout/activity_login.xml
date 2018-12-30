@@ -31,16 +31,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
+                    android:paddingTop="15dp"
                     android:text="@string/powered_by"
                     android:textColor="@color/colorAccent"
                     android:textSize="12sp" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="-15dp"
-                    android:src="@drawable/poweredby" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="m-"
+                    android:textColor="#D50100"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text="indicator"
+                    android:textColor="#0D3980"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <RelativeLayout
@@ -50,6 +61,7 @@
                 <Spinner
                     android:id="@+id/spnLanguages"
                     style="@style/SpinnerTheme"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -99,7 +111,7 @@
                             android:layout_height="140dp"
                             android:layout_marginBottom="@dimen/dim_5dp"
                             android:clickable="true"
-                            android:src="@drawable/poweredby" />
+                            android:src="@drawable/mindicator" />
 
                         <!--<TextView
                             android:id="@+id/tvVAMS"
@@ -191,7 +203,6 @@
                                 android:animateLayoutChanges="true"
                                 android:clickable="true"
                                 android:gravity="center"
-                                android:onClick="onResentOtpClick"
                                 android:layout_marginRight="10dp"
                                 android:paddingLeft="10dp"
                                 android:text="Forgot?"

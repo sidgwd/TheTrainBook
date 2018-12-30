@@ -52,6 +52,13 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
         holder.tvLastMsg.setText(community.getLastMsg());
         holder.tvMsgCount.setText(community.getMsgCount());
         holder.tvLastMsgTime.setText(community.getLastMsgTime());
+
+//        holder.tvLastMsgTime.setVisibility(community.getMsgCount().isEmpty()?View.GONE:View.VISIBLE);
+//        holder.cimvProfile.setVisibility(community.getMsgCount().isEmpty()?View.GONE:View.VISIBLE);
+        holder.tvMsgCount.setVisibility(community.getMsgCount().isEmpty()?View.GONE:View.VISIBLE);
+//        if(community.getLastMsgSrc()!=0){
+            Picasso.with(context).load(community.getLastMsgSrc()).into(holder.cimvProfile);
+//        }
         holder.swMain.getSurfaceView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +115,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvLastMsg, tvLastMsgTime, tvMsgCount;
-        CircleImageView profilePic;
+        CircleImageView profilePic,cimvProfile;
         public SwipeLayout swMain;
 
         public MyViewHolder(View itemView) {
@@ -118,6 +125,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
             tvLastMsgTime = (TextView) itemView.findViewById(R.id.tvLastMsgTime);
             tvMsgCount = (TextView) itemView.findViewById(R.id.tvMsgCount);
             profilePic = (CircleImageView) itemView.findViewById(R.id.community_profile_image);
+            cimvProfile= (CircleImageView) itemView.findViewById(R.id.cimvProfile);
             swMain = itemView.findViewById(R.id.swMain);
 
 

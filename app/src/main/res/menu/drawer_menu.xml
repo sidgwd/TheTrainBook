@@ -5,7 +5,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menuCommunity"
-            android:icon="@drawable/ic_complex_dash"
+            android:icon="@drawable/ic_community"
             android:title="@string/community" />
     </group>
     <group
@@ -13,7 +13,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menuComplainBox"
-            android:icon="@drawable/ic_appointment_schedule"
+            android:icon="@drawable/ic_complain"
             android:title="@string/complain_box"
             app:actionViewClass="android.widget.TextView" />
     </group>
@@ -22,7 +22,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menuProfile"
-            android:icon="@drawable/ic_appointment_schedule"
+            android:icon="@drawable/ic_profile"
             android:title="@string/profile"
             app:actionViewClass="android.widget.TextView" />
     </group>
@@ -32,7 +32,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menuLogout"
-            android:icon="@drawable/ic_appointment_schedule"
+            android:icon="@drawable/ic_exit"
             android:title="@string/logout"
             app:actionViewClass="android.widget.TextView" />
     </group>

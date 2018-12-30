@@ -103,55 +103,64 @@ public class CommunityFragment extends Fragment {
 
     private void fillCommunities(ArrayList<Community> communities) {
         Community community = new Community();
-        community.setGroupName("Friends");
+        community.setGroupName("The Explorers");
         community.setLastMsg("Hello bro are you there");
-        community.setMsgCount("+3");
-        community.setLastMsgTime("5:50");
-        community.setImgSrc(R.drawable.one);
-
+        community.setMsgCount("+7");
+        community.setLastMsgTime("7:50");
+        community.setImgSrc(R.drawable.group_image);
+        community.setLastMsgSrc(R.drawable.sid);
         communities.add(community);
+
+        Community community4 = new Community();
+        community4.setGroupName("Goregaonkars");
+        community4.setLastMsg("Any delays in train??");
+        community4.setMsgCount("+3");
+        community4.setLastMsgTime("9:12");
+        community4.setLastMsgSrc(R.drawable.lochana);
+        community4.setImgSrc(R.drawable.group1);
+
+        communities.add(community4);
+
+
+        Community community5 = new Community();
+        community5.setGroupName("Last Benchers");
+        community5.setLastMsg("Howz it going?");
+        community5.setMsgCount("+1");
+        community5.setLastMsgTime("3:15");
+        community5.setLastMsgSrc(R.drawable.nitin);
+        community5.setImgSrc(R.drawable.group2);
+
+        communities.add(community5);
 
         Community community2 = new Community();
         community2.setGroupName("Fire Blade");
         community2.setLastMsg("Guys tommorow there is match");
-        community2.setMsgCount("+2");
-        community2.setLastMsgTime("5:59");
-        community2.setImgSrc(R.drawable.two);
+        community2.setMsgCount("");
+//        community5.setLastMsg("Howz it going?");
+        community2.setLastMsgSrc(R.drawable.manish);
+        community2.setLastMsgTime("1:59");
+        community2.setImgSrc(R.drawable.group3);
 
         communities.add(community2);
 
         Community community3 = new Community();
         community3.setGroupName("Rockers");
-        community3.setLastMsg("Hello bro are you there");
-        community3.setMsgCount("+3");
-        community3.setLastMsgTime("5:50");
-        community3.setImgSrc(R.drawable.two);
-
+        community3.setLastMsg("I'm Reaching there by 8 AM");
+        community3.setMsgCount("");
+        community3.setLastMsgTime("00:50");
+        community3.setLastMsgSrc(R.drawable.namrata);
+        community3.setImgSrc(R.drawable.one);
         communities.add(community3);
 
-        Community community4 = new Community();
-        community4.setGroupName("Friends");
-        community4.setLastMsg("Hello bro are you there");
-        community4.setMsgCount("+3");
-        community4.setLastMsgTime("5:50");
-        community4.setImgSrc(R.drawable.two);
 
-        communities.add(community4);
 
-        Community community5 = new Community();
-        community5.setGroupName("Friends");
-        community5.setLastMsg("Hello bro are you there");
-        community5.setMsgCount("+3");
-        community5.setLastMsgTime("5:50");
-        community5.setImgSrc(R.drawable.two);
-
-        communities.add(community5);
 
         Community community6 = new Community();
-        community6.setGroupName("Friends");
-        community6.setLastMsg("Hello bro are you there");
-        community6.setMsgCount("+3");
-        community6.setLastMsgTime("5:50");
+        community6.setGroupName("Unstopables");
+        community6.setLastMsg("All Well?");
+        community6.setMsgCount("");
+        community6.setLastMsgTime("11:14");
+        community6.setLastMsgSrc(R.drawable.deepika);
         community6.setImgSrc(R.drawable.two);
 
         communities.add(community6);
