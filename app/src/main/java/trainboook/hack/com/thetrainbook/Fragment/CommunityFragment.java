@@ -50,7 +50,7 @@ public class CommunityFragment extends Fragment {
         rvCommunity.setLayoutManager(layoutManager);
         communities = new ArrayList<>();
         fillCommunities(communities);
-        CommunityAdapter communityAdapter= new CommunityAdapter(context,communities);
+        CommunityAdapter communityAdapter= new CommunityAdapter(context,communities,rvCommunity);
         rvCommunity.setAdapter(communityAdapter);
 
         fabAdd = (FloatingActionButton)view.findViewById(R.id.fab);
