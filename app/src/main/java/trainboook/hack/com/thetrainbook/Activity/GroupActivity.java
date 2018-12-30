@@ -16,10 +16,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -55,10 +59,10 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
         MessageHolders.ContentChecker<Message>,
         DialogInterface.OnClickListener {
     private static final byte CONTENT_TYPE_VOICE = 1;
-
+    AppBarLayout appBarLayout;
     SupportMapFragment mapFragment;
     private MessagesList messagesList;
-    ImageView imgvMap;
+    ImageView imgvMap,imgvGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,26 +76,51 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         imgvMap= findViewById(R.id.imgvMap);
-
+        imgvGroup= findViewById(R.id.imgvGroup);
         imgvMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GroupActivity.this, MapDetailActivity.class);
-//                ActivityOptionsCompat options = ActivityOptionsCompat.
-//                        makeSceneTransitionAnimation(GroupActivity.this,
-//                                mapFragment,
-//                                AppConfig.TRANSITION_PROFILE_PIC);
                 startActivity(intent);
             }
         });
 
+        imgvGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupActivity.this, GroupInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+         appBarLayout=findViewById(R.id.appBarLayout);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
-        collapsingToolbar.setTitle("The Explorers");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // In `OnCreate();`
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+       final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
+//        collapsingToolbar.setTitle("The Explorers");
         collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
         collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
+
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                if (Math.abs(verticalOffset)-appBarLayout.getTotalScrollRange() == 0)
+                {
+                    //  Collapsed
+                    collapsingToolbar.setTitle("The Explorers");
+                }
+                else
+                {
+                    //Expanded
+                    collapsingToolbar.setTitle("");
+                }
+            }
+        });
+
+
+
         ///
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -106,6 +135,33 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
         input.setInputListener(this);
         input.setAttachmentsListener(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBarLayout.getLayoutParams();
+                AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
+                if(ViewCompat.isLaidOut(appBarLayout)){
+                    behavior.setDragCallback(new AppBarLayout.Behavior.DragCallback() {
+                        @Override
+                        public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
+                            return false;
+                        }
+                    });
+                }
+            }
+        },2000);
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Override
