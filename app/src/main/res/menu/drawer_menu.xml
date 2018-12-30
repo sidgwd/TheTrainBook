@@ -31,7 +31,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menuReport"
-            android:icon="@drawable/ic_appointment_schedule"
+            android:icon="@drawable/ic_reports"
             android:title="@string/report"
             app:actionViewClass="android.widget.TextView" />
     </group>

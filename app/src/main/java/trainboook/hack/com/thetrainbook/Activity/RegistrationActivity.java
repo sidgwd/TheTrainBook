@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import java.io.File;
@@ -24,6 +26,7 @@ public class RegistrationActivity extends AppCompatActivity implements Imageutil
     android.support.v7.widget.Toolbar toolbar;
     public CircleImageView profile_image;
     public Imageutils imageutils;
+    FloatingActionButton fabSend;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -42,6 +45,13 @@ public class RegistrationActivity extends AppCompatActivity implements Imageutil
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         profile_image = findViewById(R.id.profile_image);
         imageutils = new Imageutils(this);
+        fabSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Toast.makeText(RegistrationActivity.this,"Thank You For Registering With Us..!",Toast.LENGTH_LONG).show();
+            }
+        });
         profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

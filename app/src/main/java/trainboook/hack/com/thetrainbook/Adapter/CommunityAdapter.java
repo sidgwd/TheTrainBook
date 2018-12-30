@@ -46,8 +46,8 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder,final int position) {
         Community community = communityArrayList.get(position);
-        holder.swMain.addDrag(SwipeLayout.DragEdge.Left, holder.itemView.findViewById(R.id.bottom_wrapper));
-        holder.swMain.addDrag(SwipeLayout.DragEdge.Right, holder.itemView.findViewById(R.id.bottom_wrapper));
+//        holder.swMain.addDrag(SwipeLayout.DragEdge.Left, holder.itemView.findViewById(R.id.bottom_wrapper));
+//        holder.swMain.addDrag(SwipeLayout.DragEdge.Right, holder.itemView.findViewById(R.id.bottom_wrapper));
         holder.tvName.setText(community.getGroupName());
         holder.tvLastMsg.setText(community.getLastMsg());
         holder.tvMsgCount.setText(community.getMsgCount());
@@ -59,52 +59,59 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
 //        if(community.getLastMsgSrc()!=0){
             Picasso.with(context).load(community.getLastMsgSrc()).into(holder.cimvProfile);
 //        }
-        holder.swMain.getSurfaceView().setOnClickListener(new View.OnClickListener() {
+//        holder.swMain.getSurfaceView().setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                context.startActivity(new Intent(context, GroupActivity.class) );
+//
+//                holder.swMain.close(true);
+//            }
+//        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 context.startActivity(new Intent(context, GroupActivity.class) );
-
-                holder.swMain.close(true);
             }
         });
         Picasso.with(context).load(community.getImgSrc()).into(holder.profilePic);
 
-        holder.swMain.addSwipeListener(new SwipeLayout.SwipeListener() {
-            @Override
-            public void onStartOpen(SwipeLayout layout) {
-                if (lastSwipedPosition != -1 && lastSwipedPosition != position) {
-                    SwipeLayout swipeLayout = (SwipeLayout) recyclerView.findViewHolderForAdapterPosition(lastSwipedPosition).itemView.findViewById(R.id.swMain);
-                    swipeLayout.close(true);
-                }
-                lastSwipedPosition = position;
-            }
-
-            @Override
-            public void onOpen(SwipeLayout layout) {
-
-            }
-
-            @Override
-            public void onStartClose(SwipeLayout layout) {
-
-            }
-
-            @Override
-            public void onClose(SwipeLayout layout) {
-
-            }
-
-            @Override
-            public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {
-
-            }
-
-            @Override
-            public void onHandRelease(SwipeLayout layout, float xvel, float yvel) {
-
-            }
-        });
+//        holder.swMain.addSwipeListener(new SwipeLayout.SwipeListener() {
+//            @Override
+//            public void onStartOpen(SwipeLayout layout) {
+//                if (lastSwipedPosition != -1 && lastSwipedPosition != position) {
+//                    SwipeLayout swipeLayout = (SwipeLayout) recyclerView.findViewHolderForAdapterPosition(lastSwipedPosition).itemView.findViewById(R.id.swMain);
+//                    swipeLayout.close(true);
+//                }
+//                lastSwipedPosition = position;
+//            }
+//
+//            @Override
+//            public void onOpen(SwipeLayout layout) {
+//
+//            }
+//
+//            @Override
+//            public void onStartClose(SwipeLayout layout) {
+//
+//            }
+//
+//            @Override
+//            public void onClose(SwipeLayout layout) {
+//
+//            }
+//
+//            @Override
+//            public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {
+//
+//            }
+//
+//            @Override
+//            public void onHandRelease(SwipeLayout layout, float xvel, float yvel) {
+//
+//            }
+//        });
 
     }
 
@@ -116,7 +123,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvLastMsg, tvLastMsgTime, tvMsgCount;
         CircleImageView profilePic,cimvProfile;
-        public SwipeLayout swMain;
+//        public SwipeLayout swMain;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -126,7 +133,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyVi
             tvMsgCount = (TextView) itemView.findViewById(R.id.tvMsgCount);
             profilePic = (CircleImageView) itemView.findViewById(R.id.community_profile_image);
             cimvProfile= (CircleImageView) itemView.findViewById(R.id.cimvProfile);
-            swMain = itemView.findViewById(R.id.swMain);
+//            swMain = itemView.findViewById(R.id.swMain);
 
 
         }
