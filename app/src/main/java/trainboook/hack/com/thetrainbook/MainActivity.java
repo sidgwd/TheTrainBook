@@ -6,18 +6,21 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,6 +34,7 @@ import trainboook.hack.com.thetrainbook.Fragment.CommunityFragment;
 import trainboook.hack.com.thetrainbook.NavDrawer.NavigationDrawerMenuFragment;
 import trainboook.hack.com.thetrainbook.Util.AppConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,7 +102,120 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(getResources().getColor(R.color.black));
         openHomeFragment();
         setPermissions();
+        showTabPreview();
     }
+
+    private void showTabPreview() {
+
+        Handler mHandler;
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final MaterialTapTargetPrompt.Builder tapTargetPromptBuilder = new MaterialTapTargetPrompt.Builder(MainActivity.this)
+                        .setPrimaryText("Navigation Menu")
+                        .setSecondaryText("You can view the menus here")
+                        .setAnimationInterpolator(new FastOutSlowInInterpolator())
+                        .setMaxTextWidth(R.dimen.tap_target_menu_max_width).setCaptureTouchEventOnFocal(true)
+                        .setCaptureTouchEventOutsidePrompt(false)
+                        .setBackgroundColour(getResources().getColor(R.color.black))
+                        .setFocalColour(getResources().getColor(R.color.focul_color1))
+                        .setCaptureTouchEventOutsidePrompt(false)
+                        .setTarget(toolbar.getChildAt(1));
+
+                tapTargetPromptBuilder.setOnHidePromptListener(new MaterialTapTargetPrompt.OnHidePromptListener() {
+                    @Override
+                    public void onHidePrompt(MotionEvent event, boolean tappedTarget) {
+                        //Do something such as storing a value so that this prompt is never shown again
+                        Handler mHandler;
+                        mHandler = new Handler();
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                final MaterialTapTargetPrompt.Builder tapTargetPromptBuilder = new MaterialTapTargetPrompt.Builder(MainActivity.this)
+                                        .setPrimaryText("Search your content")
+                                        .setSecondaryText("You can Search Community and Commuters here..")
+                                        .setAnimationInterpolator(new FastOutSlowInInterpolator())
+                                        .setMaxTextWidth(R.dimen.tap_target_menu_max_width)
+                                        .setBackgroundColour(getResources().getColor(R.color.tab_preview_background1))
+                                        .setFocalColour(getResources().getColor(R.color.focul_color1))
+                                        .setTarget(R.id.menuCommunity);
+
+                                tapTargetPromptBuilder.setOnHidePromptListener(new MaterialTapTargetPrompt.OnHidePromptListener() {
+                                    @Override
+                                    public void onHidePrompt(MotionEvent event, boolean tappedTarget) {
+                                        //Do something such as storing a value so that this prompt is never shown again
+//                                        Utility.writePreferencesForShowFirstTimeShow(context);
+
+//                                        if (AppConfig.loggedInUserDetails.getAdmin()) {
+                                            //Do something such as storing a value so that this prompt is never shown again
+                                            Handler mHandler;
+                                            mHandler = new Handler();
+                                            mHandler.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+
+                                                    final MaterialTapTargetPrompt.Builder tapTargetPromptBuilder = new MaterialTapTargetPrompt.Builder(MainActivity.this)
+                                                            .setPrimaryText("Create Group")
+                                                            .setSecondaryText("You can create group here..")
+                                                            .setAnimationInterpolator(new FastOutSlowInInterpolator())
+                                                            .setMaxTextWidth(R.dimen.tap_target_menu_max_width)
+                                                            .setCaptureTouchEventOnFocal(true)
+                                                            .setBackgroundColour(getResources().getColor(R.color.gray))
+                                                            .setFocalColour(getResources().getColor(R.color.focul_color1))
+                                                            .setCaptureTouchEventOutsidePrompt(false)
+                                                            .setTarget(R.id.fab);
+
+                                                    tapTargetPromptBuilder.setOnHidePromptListener(new MaterialTapTargetPrompt.OnHidePromptListener() {
+                                                        @Override
+                                                        public void onHidePrompt(MotionEvent event, boolean tappedTarget) {
+                                                            //Do something such as storing a value so that this prompt is never shown again
+//                                                            Utility.writePreferencesForShowFirstTimeShow(context);
+
+
+//                                                            appBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
+//                                                            toolbar = (Toolbar) findViewById(R.id.toolbar);
+//                                                            toolbar.setTitle(getResources().getString(R.string.generate_alert));
+//                                                            toolbar.setNavigationIcon(R.mipmap.ic_menu);
+//                                                            setSupportActionBar(toolbar);
+                                                        }
+
+                                                        @Override
+                                                        public void onHidePromptComplete() {
+
+                                                        }
+                                                    });
+                                                    tapTargetPromptBuilder.show();
+                                                }
+                                            }, 800);
+//                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onHidePromptComplete() {
+
+                                    }
+                                });
+
+                                tapTargetPromptBuilder.show();
+
+
+                            }
+                        }, 800);
+                    }
+
+                    @Override
+                    public void onHidePromptComplete() {
+
+                    }
+                });
+                tapTargetPromptBuilder.show();
+            }
+        }, 3000);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

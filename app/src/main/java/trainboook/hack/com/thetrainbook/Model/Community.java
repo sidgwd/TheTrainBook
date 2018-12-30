@@ -6,6 +6,7 @@ public class Community {
     public String lastMsg;
     public String lastMsgTime;
     public int imgSrc;
+    public int lastMsgSrc;
     public String msgCount;
 
     public String getMsgCount() {
@@ -46,5 +47,13 @@ public class Community {
 
     public void setLastMsgTime(String lastMsgTime) {
         this.lastMsgTime = lastMsgTime;
+    }
+
+    public int getLastMsgSrc() {
+        return lastMsgSrc;
+    }
+
+    public void setLastMsgSrc(int lastMsgSrc) {
+        this.lastMsgSrc = lastMsgSrc;
     }
 }

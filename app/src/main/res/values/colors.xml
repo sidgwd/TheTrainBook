@@ -69,5 +69,6 @@
 
     <color name="transperent_white_tint">#99FFFFFF</color>
 
-
+    <color name="focul_color1">#FDD835</color>
+    <color name="tab_preview_background1">#283593</color>
 </resources>

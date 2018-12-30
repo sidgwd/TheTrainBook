@@ -54,7 +54,7 @@ import trainboook.hack.com.thetrainbook.R;
 import trainboook.hack.com.thetrainbook.Util.AppConfig;
 
 
-public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCallback , MessageInput.InputListener,
+public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCallback, MessageInput.InputListener,
         MessageInput.AttachmentsListener,
         MessageHolders.ContentChecker<Message>,
         DialogInterface.OnClickListener {
@@ -62,7 +62,7 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
     AppBarLayout appBarLayout;
     SupportMapFragment mapFragment;
     private MessagesList messagesList;
-    ImageView imgvMap,imgvGroup;
+    ImageView imgvMap, imgvGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +75,8 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
         }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        imgvMap= findViewById(R.id.imgvMap);
-        imgvGroup= findViewById(R.id.imgvGroup);
+        imgvMap = findViewById(R.id.imgvMap);
+        imgvGroup = findViewById(R.id.imgvGroup);
         imgvMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,12 +92,12 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
                 startActivity(intent);
             }
         });
-         appBarLayout=findViewById(R.id.appBarLayout);
+        appBarLayout = findViewById(R.id.appBarLayout);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // In `OnCreate();`
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-       final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
+        final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
 //        collapsingToolbar.setTitle("The Explorers");
         collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
         collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
@@ -106,19 +106,15 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
 
-                if (Math.abs(verticalOffset)-appBarLayout.getTotalScrollRange() == 0)
-                {
+                if (Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0) {
                     //  Collapsed
                     collapsingToolbar.setTitle("The Explorers");
-                }
-                else
-                {
+                } else {
                     //Expanded
                     collapsingToolbar.setTitle("");
                 }
             }
         });
-
 
 
         ///
@@ -145,7 +141,7 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
             public void run() {
                 CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) appBarLayout.getLayoutParams();
                 AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
-                if(ViewCompat.isLaidOut(appBarLayout)){
+                if (ViewCompat.isLaidOut(appBarLayout)) {
                     behavior.setDragCallback(new AppBarLayout.Behavior.DragCallback() {
                         @Override
                         public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
@@ -154,7 +150,7 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
                     });
                 }
             }
-        },2000);
+        }, 2000);
 
     }
 
@@ -244,69 +240,68 @@ public class GroupActivity extends DemoMessagesActivity implements OnMapReadyCal
     public void onMapReady(final GoogleMap googleMap) {
 
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(19.2270761,72.8562612))
+                .position(new LatLng(19.2270761, 72.8562612))
                 .title("Siddhesh Gawde[Boriwali]")
                 .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.sid)))).setAnchor(0.5f, 1);
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.2270761,72.8562612), 10));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.2270761, 72.8562612), 10));
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(19.1511146,72.8517952))
+                        .position(new LatLng(19.1511146, 72.8517952))
                         .title("Lochana Chavan[Goregaon]")
                         .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.lochana)))).setAnchor(0.5f, 1);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.1511146,72.8517952), 12));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.1511146, 72.8517952), 12));
             }
-        },10000);
+        }, 10000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(19.0740174,72.8410076))
+                        .position(new LatLng(19.0740174, 72.8410076))
                         .title("Deepika[Santacruze]")
                         .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.deepika)))).setAnchor(0.5f, 1);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0740174,72.8410076), 12));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0740174, 72.8410076), 12));
             }
-        },18000);
+        }, 18000);
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(19.0547506,72.8406643))
+                        .position(new LatLng(19.0547506, 72.8406643))
                         .title("Manish Javlekar[Bandra]")
                         .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.manish)))).setAnchor(0.5f, 1);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0547506,72.8406643), 13));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0547506, 72.8406643), 13));
             }
-        },25000);
+        }, 25000);
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(19.0406709,72.8444034))
+                        .position(new LatLng(19.0406709, 72.8444034))
                         .title("Namrata gupta [Mahim]")
                         .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.namrata)))).setAnchor(0.5f, 1);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0406709,72.8444034), 14));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0406709, 72.8444034), 14));
             }
-        },30000);
+        }, 30000);
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(19.0276851,72.8481031))
+                        .position(new LatLng(19.0276851, 72.8481031))
                         .title("Nitin Poojari [Matunga]")
                         .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.nitin)))).setAnchor(0.5f, 1);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0276851,72.8481031), 14));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(19.0276851, 72.8481031), 14));
             }
-        },35000);
-
+        }, 35000);
 
 
     }

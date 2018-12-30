@@ -16,8 +16,9 @@
         android:id="@+id/vGlobalMenuHeader"
         android:layout_width="match_parent"
         android:gravity ="left"
+
         android:background="@color/white"
-        android:layout_height="100dp">
+        android:layout_height="200dp">
 
         <ImageView
             android:id="@+id/ivMenuUserProfilePhoto"
@@ -26,8 +27,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/poweredby" />
+            android:src="@drawable/mindicator" />
 
 
     </LinearLayout>
